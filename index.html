@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link A to Z</title>
+    <style>
+        /* General Styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #e6f5e6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+        }
+
+        /* Background and Main Page */
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            background: linear-gradient(135deg, #d4f0d4, #a8e0a8);
+            text-align: center;
+            padding: 20px; /* Added padding for better spacing */
+            width: 100%; /* Ensure it takes full width */
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        /* Header Logo and Navigation */
+        header {
+            position: relative;
+            width: 100%;
+            background: #006400;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        .logo {
+            margin-bottom: 10px;
+        }
+
+        .logo img {
+            max-width: 150px; /* Adjust logo size */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .company-name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 10px 0;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            font-style: italic;
+            color: #00BFFF;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            margin: 0 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hamburger Menu */
+        .menu-icon {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            margin: 6px 0;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 40px; /* Adjusted to place it below the menu icon */
+            left: 70px; /* Adjusted to position it to the right of the menu icon */
+            background-color: #004d00;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid #006400;
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #008000;
+        }
+
+        /* Main Content Styling */
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+
+        /* Goal Section */
+        .goal-section {
+            margin-top: 50px;
+            width: 100%; /* Ensure it takes full width */
+            max-width: 800px; /* Limit the maximum width */
+        }
+
+        .goal-section h2 {
+            font-size: 2.5rem;
+            color: #006400;
+        }
+
+        .goal-section p {
+            font-size: 1.3rem;
+            margin: 20px 0;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            margin-top: 50px;
+            width: 100%; /* Ensure it takes full width */
+            max-width: 800px; /* Limit the maximum width */
+        }
+
+        .portfolio-section h2 {
+            font-size: 2.5rem;
+            color: #006400;
+            margin-bottom: 30px;
+        }
+
+        .portfolio-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 0 -10px; /* Adjust margins for grid items */
+        }
+
+        .portfolio-item {
+            width: 300px;
+            margin: 10px; /* Adjusted for better spacing */
+            background-color: #fff;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .portfolio-item img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .portfolio-item p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        /* About Us Section */
+        .about-us-section {
+            margin-top: 50px;
+            text-align: center;
+            color: #333;
+            width: 100%; /* Ensure it takes full width */
+            max-width: 800px; /* Limit the maximum width */
+        }
+
+        .about-us-section h2 {
+            font-size: 2.5rem;
+            color: #006400;
+        }
+
+        .about-us-section p {
+            font-size: 1.3rem;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px;
+            background-color: #004d00;
+            color: white;
+            text-align: center;
+            width: 100%; /* Ensure it takes full width */
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        .footer-content p {
+            margin: 5px 0; /* Remove excessive side margins */
+        }
+
+        /* Make email and phone clickable */
+        a.email, a.phone, a.whatsapp {
+            color: white;
+            text-decoration: none;
+        }
+
+        a.email:hover, a.phone:hover, a.whatsapp:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .dropdown-menu {
+                width: 100%;
+                left: 0;
+            }
+
+            .menu-icon {
+                position: fixed;
+                top: 10px;
+                left: 10px;
+            }
+
+            .portfolio-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .portfolio-item {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="menu-icon" onclick="toggleMenu(event)">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        
+        <!-- Logo -->
+        <div class="logo">
+            <img src="link a2z  logo.png" alt="Link A to Z Logo">
+        </div>
+        <div class="company-name">Link A to Z</div>
+        <div class="tagline">Your web buddy | Tension-free web browsing</div>
+        <nav>
+            <a href="#" onclick="scrollToSection('home')">Home</a>
+            <a href="#" onclick="scrollToSection('about')">About Us</a>
+            <a href="#" onclick="scrollToSection('contact')">Contact Information</a>
+            <a href="https://linka2z.com/app/login">Login</a>
+        </nav>
+
+        <!-- Dropdown Menu -->
+        <div id="dropdown-menu" class="dropdown-menu">
+            <a href="categories.html">Category</a>
+            <a href="subscription.html">Subscription</a>
+            <a href="earning.html">Earning</a>
+            <a href="wallet.html">Wallet</a>
+        </div>
+    </header>
+
+    <div id="home" class="main-container">
+        <h1>Welcome to Link A to Z</h1>
+        <div class="content">
+            <p>We provide customers with all types of verified and secure links, ensuring safety and trust for our users.</p>
+        </div>
+
+        <!-- Goal Section -->
+        <div class="goal-section">
+            <h2>Our Goal</h2>
+            <p>At Link A to Z, our goal is to make web browsing seamless and secure. We strive to provide users with the most reliable and verified links, ensuring a safe and hassle-free online experience. Whether it's for personal or professional use, we ensure that all links on our platform are thoroughly vetted, giving you peace of mind while browsing.</p>
+        </div>
+
+        <!-- Portfolio Section -->
+        <div class="portfolio-section">
+                        <h2>Our Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="1st portpolio.jpg" alt="Portfolio Image 1">
+                    <p>Verified and secure links for various categories including technology, education, health, and more.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="2nd portfolio.png" alt="Portfolio Image 2">
+                    <p>Our system ensures users can safely explore the web with minimal risk and maximum efficiency.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="3rd portfolio.jpg" alt="Portfolio Image 3">
+                    <p>We prioritize user safety and continuously monitor our links to maintain the highest standards.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Us Section -->
+        <div id="about" class="about-us-section">
+            <h2>About Us</h2>
+            <p>Link A to Z is dedicated to providing verified and secure links across various categories, ensuring users have a reliable resource for their online needs. Our commitment to safety and trust makes us a leading platform in the industry. Our team is constantly working to improve our services and provide the best experience possible for our users.</p>
+        </div>
+
+        <!-- Contact Information Section -->
+        <footer>
+            <div id="contact" class="footer-content">
+                <h2>Contact Information</h2>
+                <p>Company Name: Link A to Z</p>
+                <p>Link A to Z is a service of Billu Enterprise Company</p>
+                <p>Email: <a href="mailto:info@linkatoz.com" class="email">info@linkatoz.com</a></p>
+                <p>Phone: <a href="tel:8967334939" class="phone">+91 8967334939</a></p>
+                <p>WhatsApp: <a href="https://wa.me/8967334939" class="whatsapp">8967334939</a></p> <!-- Updated class -->
+                <p>Address: Taladiha, Narayangarh, W.B, 721437</p>
+                <p>&copy; 2024 Link A to Z. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Toggle dropdown menu
+        function toggleMenu(event) {
+            event.stopPropagation(); // Prevent the click event from bubbling up to the document
+            const dropdown = document.getElementById('dropdown-menu');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'; // Toggle visibility
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('dropdown-menu');
+            const menuIcon = document.querySelector('.menu-icon');
+            if (!menuIcon.contains(event.target)) { // Check if the click is outside the menu icon
+                dropdown.style.display = 'none'; // Hide dropdown
+            }
+        });
+
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+
+</body>
+</html>
+

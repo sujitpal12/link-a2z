@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link A to Z</title>
+    <style>
+        /* General Styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #e6f5e6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+        }
+
+        /* Main Page Background */
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            background: linear-gradient(135deg, #d4f0d4, #a8e0a8);
+            text-align: center;
+        }
+
+        /* Header, Logo, and Navigation */
+        header {
+            position: relative;
+            width: 100%;
+            background: #006400;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .logo img {
+            max-width: 150px;
+        }
+
+        .company-name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 10px 0;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #00BFFF;
+        }
+
+        nav a {
+            margin: 0 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hamburger Menu */
+        .menu-icon {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            margin: 6px 0;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 70px;
+            background-color: #004d00;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid #006400;
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #008000;
+        }
+
+        /* Category Section */
+        .category-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .category {
+            background: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px;
+            width: 220px;
+            text-align: left;
+        }
+
+        .category h3 {
+            margin: 0 0 10px;
+        }
+
+        .services {
+            margin: 10px 0;
+        }
+
+        .show-more {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* About Us Section */
+        .about-us-section {
+            margin-top: 50px;
+            text-align: center;
+            color: #333;
+        }
+
+        .about-us-section h2 {
+            font-size: 2.5rem;
+            color: #006400;
+        }
+
+        .about-us-section p {
+            font-size: 1.3rem;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px;
+            background-color: #004d00;
+            color: white;
+            text-align: center;
+        }
+
+        a.email, a.phone, a.whatsapp {
+            color: white;
+            text-decoration: none;
+        }
+
+        a.email:hover, a.phone:hover, a.whatsapp:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .dropdown-menu {
+                width: 100%;
+                left: 0;
+            }
+
+            .menu-icon {
+                position: fixed;
+                top: 10px;
+                left: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="menu-icon" onclick="toggleMenu(event)">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    
+    <div class="logo">
+        <img src="link a2z  logo.png" alt="Link A to Z Logo">
+    </div>
+    <div class="company-name">Link A to Z</div>
+    <div class="tagline">Your web buddy | Tension-free web browsing</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#About us">About Us</a>
+        <a href="#Contact Information">Contact Information</a>
+        <a href="https://linka2z.com/app/login">Login</a>
+    </nav>
+
+    <!-- Dropdown Menu -->
+    <div id="dropdown-menu" class="dropdown-menu">
+        <a href="categories.html">Category</a>
+        <a href="subscription.html">Subscription</a>
+        <a href="earning.html">Earning</a>
+        <a href="wallet.html">Wallet</a>
+    </div>
+</header>
+
+<!-- Main Category Section -->
+<div id="home" class="main-container">
+<section id="Home">
+    <h1>Welcome to Link A to Z</h1>
+    <p>We provide customers with all types of verified and secure links, ensuring safety and trust for our users.</p>
+
+    <div class="category-container">
+        <!-- Category 1 -->
+        <div class="category">
+            <h3>Education</h3>
+            <p>Price:₹50 </p>
+            <div class="services">
+                <p>class 1</p>
+                <p>class 2</p>
+                <p>class 3</p>
+                <div class="hidden">
+                    <p>class 4</p>
+                    <p>class 5</p>
+                    <p>class 6</p>
+                </div>
+            </div>
+            <button class="show-more" onclick="toggleServices(this)">Show More</button>
+        </div>
+        <!-- Category 2 -->
+        <div class="category">
+            <h3>Productivity</h3>
+            <p>Price: ₹30</p>
+            <div class="services">
+                <p> calculator</p>
+                <p> EMI calculator</p>
+                <p> Notepad</p>
+                <div class="hidden">
+                    <p> Compass</p>
+                    
+                </div>
+            </div>
+            <button class="show-more" onclick="toggleServices(this)">Show More</button>
+        </div>
+        <!-- Category 3 -->
+        <div class="category">
+            <h3> Finance</h3>
+            <p>Price: ₹20</p>
+            <div class="services">
+                <p> Interest calculator</p>
+                <p> EMI calculator</p>
+                <p> Fixed deposit rate</p>
+                <div class="hidden">
+                    <p> Home lone</p>
+                    <p> Car loan</p>
+                    
+                </div>
+            </div>
+            <button class="show-more" onclick="toggleServices(this)">Show More</button>
+        </div>
+        <!-- Category 4 -->
+        <div class="category">
+            <h3> Health</h3>
+            <p>Price: ₹0</p>
+            <div class="services">
+                <p> Medicine information</p>
+                <p> Health insurance</p>
+                <p> Opd booking</p>
+                <div class="hidden">
+                    <p>Know about any disease</p>
+                    <p>Period calculator</p>
+                    <p> Birth certificate</p>
+                    <p> Death certificate</p>
+                </div>
+            </div>
+            <button class="show-more" onclick="toggleServices(this)">Show More</button>
+        </div>
+    </div>
+</div>
+
+<!-- About Us Section -->
+<div id="about" class="about-us-section">
+<section id="About us">
+    <h2>About Us</h2>
+    <p>Link A to Z is dedicated to providing verified and secure links across various categories, ensuring users have a reliable resource for their online needs.</p>
+</div>
+
+<!-- Footer / Contact Information -->
+<footer id="contact">
+<section id="Contact Information">
+    <h2>Contact Information</h2>
+    <p>Company Name: Link A to Z</p>
+    <p>Email: <a href="mailto:info@linkatoz.com" class="email">info@linkatoz.com</a></p>
+    <p>Phone: <a href="tel:8967334939" class="phone">+91 8967334939</a></p>
+    <p>WhatsApp: <a href="https://wa.me/8967334939" class="whatsapp">8967334939</a></p>
+    <p>Address: Taladiha, Narayangarh, W.B, 721437</p>
+    <p>&copy; 2024 Link A to Z. All rights reserved.</p>
+</footer>
+
+<script>
+    // Toggle dropdown menu
+    function toggleMenu(event) {
+        event.stopPropagation();
+        const dropdown = document.getElementById('dropdown-menu');
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+        const dropdown = document.getElementById('dropdown-menu');
+        const menuIcon = document.querySelector('.menu-icon');
+        if (!menuIcon.contains(event.target)) {
+            dropdown.style.display = 'none';
+        }
+    });
+
+    // Toggle service list
+    function toggleServices(button) {
+        const services = button.previousElementSibling.querySelector('.hidden');
+        if (services.style.display === 'block') {
+            services.style.display = 'none';
+            button.innerText = 'Show More';
+        } else {
+            services.style.display = 'block';
+            button.innerText = 'Show Less';
+        }
+    }
+</script>
+
+</body>
+</html>
+

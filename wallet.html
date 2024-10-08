@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link A to Z</title>
+    <style>
+        /* General Styling */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #e6f5e6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+        }
+
+        /* Main Page Background */
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            background: linear-gradient(135deg, #d4f0d4, #a8e0a8);
+            text-align: center;
+        }
+
+        /* Header, Logo, and Navigation */
+        header {
+            position: relative;
+            width: 100%;
+            background: #006400;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .logo img {
+            max-width: 150px;
+        }
+
+        .company-name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 10px 0;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #00BFFF;
+        }
+
+        nav a {
+            margin: 0 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hamburger Menu */
+        .menu-icon {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            margin: 6px 0;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 70px;
+            background-color: #004d00;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid #006400;
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #008000;
+        }
+
+        /* Wallet Section */
+        .wallet-container {
+            margin-top: 50px;
+            text-align: center;
+            color: #333;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+
+        .wallet-container h2 {
+            font-size: 2.5rem;
+            color: #006400;
+            margin-bottom: 20px;
+        }
+
+        .wallet-box {
+            background: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .wallet-container p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        /* About Us Section */
+        .about-us-section {
+            margin-top: 50px;
+            text-align: center;
+            color: #333;
+        }
+
+        .about-us-section h2 {
+            font-size: 2.5rem;
+            color: #006400;
+        }
+
+        .about-us-section p {
+            font-size: 1.3rem;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px;
+            background-color: #004d00;
+            color: white;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        footer section {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        a.email,
+        a.phone,
+        a.whatsapp {
+            color: white;
+            text-decoration: none;
+        }
+
+        a.email:hover,
+        a.phone:hover,
+        a.whatsapp:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav a {
+                display: block;
+                margin: 50px 0;
+            }
+
+            .dropdown-menu {
+                width: 100%;
+                left: 0;
+            }
+
+            .menu-icon {
+                position: fixed;
+                top: 10px;
+                left: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="menu-icon" onclick="toggleMenu(event)">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    
+    <div class="logo">
+        <img src="link a2z  logo.png" alt="Link A to Z Logo">
+    </div>
+    <div class="company-name">Link A to Z</div>
+    <div class="tagline">Your web buddy | Tension-free web browsing</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#About us">About Us</a>
+        <a href="#Contact Information">Contact Information</a>
+        <a href="https://linka2z.com/app/login">Login</a>
+    </nav>
+
+    <!-- Dropdown Menu -->
+    <div id="dropdown-menu" class="dropdown-menu">
+        <a href="categories.html">Category</a>
+        <a href="subscription.html">Subscription</a>
+        <a href="earning.html">Earning</a>
+        <a href="wallet.html">Wallet</a>
+    </div>
+</header>
+
+<!-- Main Wallet Section -->
+<div id="home" class="main-container">
+<section id="Home" class="wallet-container">
+    <h2>Wallet</h2>
+    <p>Our wallet has two types: <strong>Main Balance</strong> (real money) and <strong>Link Points</strong> (converting real money into points for app use).</p>
+    
+    <div class="wallet-box">
+        <h3>Main Balance</h3>
+        <p>Your main balance can be used for transactions.</p>
+    </div>
+
+    <div class="wallet-box">
+        <h3>Link Points</h3>
+        <p>Your link points can be converted into main balance for use in the app.</p>
+    </div>
+
+    <h3>How to Transfer Link Points to Main Balance:</h3>
+    <p>1. Go to the wallet section of the app.<br>
+    2. Click on the "Convert Link Point to Wallet" option.<br>
+    3. Enter the value and click on "Convert Link Point to Balance." The task will be completed.</p>
+
+    <h3>How to Convert Link Points to Main Balance:</h3>
+    <p>1. Go to the wallet section of the app.<br>
+    2. Click on the "Convert Link Point to Wallet" option.<br>
+    3. Click on "Convert Link Point to Balance" with the amount of money.</p>
+
+    <h3>How to Transfer Balance to Bank:</h3>
+    <p>1. Go to the wallet section of the app.<br>
+    2. Click on the "Bank Transfer" option.<br>
+    3. Click on "Transfer to Bank Account" with the amount of money. The transaction will be completed.</p>
+
+    <h3>How to Add Main Balance:</h3>
+    <p>1. Go to the wallet section of the app.<br>
+    2. Click on the "Add Money" option.<br>
+    3. Select the payment method and make the payment.</p>
+</section>
+
+<!-- About Us Section -->
+<div id="about" class="about-us-section">
+<section id="About us">
+    <h2>About Us</h2>
+    <p>Link A to Z is dedicated to providing verified and secure links across various categories, ensuring users have a reliable resource for their online needs.</p>
+</section>
+</div>
+
+<!-- Footer / Contact Information -->
+
+<footer id="contact">
+<section id="Contact Information">
+    <h2>Contact Information</h2>
+    <p>Company Name: Link A to Z</p>
+    <p>Email: <a href="mailto:info@linkatoz.com" class="email">info@linkatoz.com</a></p>
+    <p>Phone: <a href="tel:8967334939" class="phone">+91 8967334939</a></p>
+    <p>WhatsApp: <a href="https://wa.me/8967334939" class="whatsapp">+91 8967334939</a></p>
+    <p>Address: Taladiha, Narayangarh, W.B, 721437</p>
+    <p>&copy; 2024 Link A to Z. All rights reserved.</p>
+</section>
+</footer>
+
+
+<script>
+    function toggleMenu(event) {
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.menu-icon')) {
+            const dropdowns = document.getElementsByClassName("dropdown-menu");
+            for (let i = 0; i < dropdowns.length; i++) {
+                const openDropdown = dropdowns[i];
+                if (openDropdown.style.display === 'block') {
+                    openDropdown.style.display = 'none';
+                }
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
+
